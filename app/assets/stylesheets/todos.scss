@@ -1,3 +1,30 @@
-// Place all the styles related to the todos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notification {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  .alert{
+    background-color: #f35500;
+  }
+  .notice {
+    background-color: #38AEF0;
+  }
+}
+.contents {
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 500px;
+  .form {
+    &__text-field {
+      height: 30px;
+      width: 300px;
+    }
+  }
+  .todos {
+    .todo {
+      font-size: 20px;
+      height: 40px;
+      line-height: 40px;
+      padding: 20px;
+    }
+  }
+}

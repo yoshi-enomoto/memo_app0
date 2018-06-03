@@ -1,14 +1,14 @@
-%h1 Todos#index
-%p Find me in app/views/todos/index.html.erb
-
-
-= form_for @todo do |f|
-  = f.text_field :content, placeholder: "write something"
-  = f.submit "投稿"
-
--@todos.each do |todo|
-  =todo.content
-
 .notification
   - flash.each do |key, value|
     = content_tag :div, value, class: key
+
+.contents
+  = form_for @todo, html: { class: "form js-form"} do |f|
+    = f.text_field :content, placeholder: "write something", class: "form__text-field js-form__text-field"
+    = f.submit "投稿", class: "form__submit js-submit"
+
+  %ul.todos
+    -@todos.each do |todo|
+      %li.todo
+        =todo.content
+
