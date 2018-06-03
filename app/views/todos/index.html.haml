@@ -8,7 +8,10 @@
     = f.submit "投稿", class: "form__submit js-submit"
 
   %ul.todos
-    -@todos.each do |todo|
-      %li.todo
-        =todo.content
+    =render @todos
+    -#
+      書き換え：渡す側・複数、受ける側・単数
+       -@todos.each do |todo|
+         %li.todo
+           =todo.content
 
