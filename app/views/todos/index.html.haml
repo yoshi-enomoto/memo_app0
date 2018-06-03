@@ -1,0 +1,17 @@
+.notification
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
+
+.contents
+  = form_for @todo, html: { class: "form js-form"} do |f|
+    = f.text_field :content, placeholder: "write something", class: "form__text-field js-form__text-field"
+    = f.submit "投稿", class: "form__submit js-submit"
+
+  %ul.todos
+    =render @todos
+    -#
+      書き換え：渡す側・複数、受ける側・単数
+       -@todos.each do |todo|
+         %li.todo
+           =todo.content
+
