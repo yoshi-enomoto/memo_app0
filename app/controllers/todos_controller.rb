@@ -8,7 +8,12 @@ class TodosController < ApplicationController
   def create
     @todo = Todo.new(todo_params)
     if @todo.save
-      redirect_to root_path, notice: "保存が完了しました"
+      # 下記をそのまま『format.html』内に記述。
+      # redirect_to root_path, notice: "保存が完了しました"
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "保存が完了しました" }
+        format.json { render json: @todo}
+      end
     else
       flash.now[:alert] = "Todoを入力してください"
       @todos = Todo.all
