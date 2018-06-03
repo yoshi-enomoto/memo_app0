@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   def index
+    # indexでnewも兼ねている為、『@todo』を記載
     @todos = Todo.all
     @todo = Todo.new
   end
