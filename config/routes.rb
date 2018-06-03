@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'todos/index'
+  root "todos#index"
+  # コントローラで『index,create』を生成し、書き換える場合でも下記は必要
+  resources :todos, only: :create
 
-  get 'todos/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
