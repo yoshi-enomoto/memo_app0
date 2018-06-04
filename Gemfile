@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # 『gem』の追加
 gem "haml-rails"
 gem "erb2haml"
+gem "rspec-rails"
+gem "factory_girl_rails", "~> 4.4.1"
+gem "faker"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
