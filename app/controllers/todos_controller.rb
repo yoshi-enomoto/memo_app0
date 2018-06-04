@@ -1,7 +1,9 @@
 class TodosController < ApplicationController
   def index
     # indexでnewも兼ねている為、『@todo』を記載
-    @todos = Todo.all
+    # 表示の順番を作成日時が古い順に。
+    @todos = Todo.order("created_at ASC")
+    # @todos = Todo.all
     @todo = Todo.new
   end
 
@@ -24,7 +26,9 @@ class TodosController < ApplicationController
   private
   def todo_params
     # 『form_for』で送っている為、『require(:todo)』が必要
-    params.require(:todo).permit(:content)
+    # params.require(:todo).permit(:content)
+    # テストを通す為に変更1/2
+    params.fetch(:todo, {}).permit(:content)
   end
 
 end
